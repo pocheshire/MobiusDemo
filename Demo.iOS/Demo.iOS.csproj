@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{9FF67C9F-3F58-4266-B4DD-BCE64494199C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Demo.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Demo.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer: Максим Евтух (9UJ6GAL7Y9)</CodesignKey>
+    <MtouchProfiling>true</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignKey>iPhone Developer: Максим Евтух (CSX6R4KTV4)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchProfiling>true</MtouchProfiling>
+    <CodesignProvision>a889f5f7-ed5c-43b5-b7e1-a878a38177fc</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\packages\MvvmCross.Platform.4.1.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.4.1.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS">
+      <HintPath>..\packages\MvvmCross.Core.4.1.0\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.4.1.0\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS">
+      <HintPath>..\packages\MvvmCross.Binding.4.1.1\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.4.1.1\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.4.1.1\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File">
+      <HintPath>..\packages\MvvmCross.Plugin.File.4.1.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.File.4.1.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\packages\MvvmCross.Plugin.Visibility.4.1.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.Visibility.4.1.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.4.1.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="AppDelegate.cs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Controls\YaMoneyView.cs" />
+    <Compile Include="Views\Main\MainViewController.cs" />
+    <Compile Include="DemoDebugTrace.cs" />
+    <Compile Include="Navigation\CustomNavigationPresenter.cs" />
+    <Compile Include="Views\_base\CommonViewController_T.cs" />
+    <Compile Include="UIExtensions\UIViewExtentionMethods.cs" />
+    <Compile Include="Services\ExtendedUserInteraction.cs" />
+    <Compile Include="Services\BeaconService.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Views\Basket\BasketViewController.cs" />
+    <Compile Include="Views\Pay\PayViewController.cs" />
+    <Compile Include="Views\Product\ProductViewController.cs" />
+    <Compile Include="Views\Thanks\ThanksViewController.cs" />
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bindings\PhoneTextBingindController.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.Core\Demo.Core.csproj">
+      <Project>{D1C8218E-9A09-4334-BC3D-8D72C0ABA7B8}</Project>
+      <Name>Demo.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.API\Demo.API.csproj">
+      <Project>{223AEAF9-6B47-4F48-B562-3CC594AF820C}</Project>
+      <Name>Demo.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+    <Folder Include="Services\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Main\" />
+    <Folder Include="Views\_base\" />
+    <Folder Include="Navigation\" />
+    <Folder Include="Views\Basket\" />
+    <Folder Include="Views\Pay\" />
+    <Folder Include="Views\Product\" />
+    <Folder Include="Views\Thanks\" />
+    <Folder Include="Images\" />
+    <Folder Include="Bindings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\bill%402x.png" />
+    <BundleResource Include="Images\close%402x.png" />
+    <BundleResource Include="Images\main%402x.jpg" />
+  </ItemGroup>
+</Project>

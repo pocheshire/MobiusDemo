@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{D1C8218E-9A09-4334-BC3D-8D72C0ABA7B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Demo.Core</RootNamespace>
+    <AssemblyName>Demo.Core</AssemblyName>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="ViewModels\Main\MainViewModel.cs" />
+    <Compile Include="Services\IBeaconService.cs" />
+    <Compile Include="Messages\BeaconChangeProximityMessage.cs" />
+    <Compile Include="ViewModels\Product\ProductViewModel.cs" />
+    <Compile Include="ViewModels\Basket\BasketViewModel.cs" />
+    <Compile Include="ViewModels\Pay\PayViewModel.cs" />
+    <Compile Include="ViewModels\Thanks\ThanksViewModel.cs" />
+    <Compile Include="Services\IExtendedUserInteraction.cs" />
+    <Compile Include="ViewModels\_base\NavigationHint.cs" />
+    <Compile Include="ViewModels\_base\NavigationType.cs" />
+    <Compile Include="ViewModels\_base\CommonViewModel.cs" />
+    <Compile Include="Extentions\SystemExtensions.cs" />
+    <Compile Include="ViewModels\_base\ICommonViewModel.cs" />
+    <Compile Include="Extentions\StringExtentions.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.API\Demo.API.csproj">
+      <Project>{223AEAF9-6B47-4F48-B562-3CC594AF820C}</Project>
+      <Name>Demo.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.4.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.4.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Main\" />
+    <Folder Include="ViewModels\_base\" />
+    <Folder Include="Services\" />
+    <Folder Include="Messages\" />
+    <Folder Include="ViewModels\Product\" />
+    <Folder Include="ViewModels\Basket\" />
+    <Folder Include="ViewModels\Pay\" />
+    <Folder Include="ViewModels\Thanks\" />
+    <Folder Include="Extentions\" />
+  </ItemGroup>
+</Project>
