@@ -33,11 +33,11 @@ namespace Demo.Core.ViewModels.Main
             }
         }
 
-        public MainViewModel(IBeaconService beaconService)
+        public MainViewModel()
         {
             Hint.NavigationType = NavigationType.ClearAndPush;
 
-            _beaconService = beaconService;
+            _beaconService = Mvx.Resolve<IBeaconService>();
 
             _beaconToken = Messenger.Subscribe<BeaconChangeProximityMessage>(OnBeaconIsNear);
         }
