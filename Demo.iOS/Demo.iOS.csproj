@@ -67,13 +67,15 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
-    <CodesignKey>iPhone Developer: Максим Евтух (CSX6R4KTV4)</CodesignKey>
+    <CodesignKey>iPhone Developer: Denis Kretov (55N97P5H9V)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchProfiling>true</MtouchProfiling>
-    <CodesignProvision>a889f5f7-ed5c-43b5-b7e1-a878a38177fc</CodesignProvision>
+    <CodesignProvision>15a4dcd2-1335-4a46-a5e4-90a7fa00bd75</CodesignProvision>
+    <IpaPackageName>
+    </IpaPackageName>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
