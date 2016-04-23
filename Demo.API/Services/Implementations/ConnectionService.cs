@@ -16,12 +16,12 @@ namespace Demo.API.Services.Implementations
             return await ProcessRequest<T>(url, null, errorMessage);
         }
 
-        public static async Task<T> Post<T>(string url, object postData, string errorMessage = null)
+        public static async Task<T> Post<T>(string url, HttpContent postData, string errorMessage = null)
         {
             return await ProcessRequest<T>(url, postData, errorMessage);
         }
 
-        private static async Task<T> ProcessRequest<T>(string url, object postData, string errorMessage)
+        private static async Task<T> ProcessRequest<T>(string url, HttpContent postData, string errorMessage)
         {
             using (var handler = new HttpClientHandler())
             {
@@ -38,11 +38,8 @@ namespace Demo.API.Services.Implementations
                         message.Method = postData == null ? HttpMethod.Get : HttpMethod.Post;
 
                         if (postData != null)
-                        {
-                            string json = JsonConvert.SerializeObject(postData);
-                            message.Content = new  StringContent(json);
-                            message.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
-                        }
+                            message.Content = postData;
+                        
                         string data;
                         try
                         {

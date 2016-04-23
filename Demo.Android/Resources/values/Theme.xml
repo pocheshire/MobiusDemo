@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Theme.Demo" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@android:color/white</item>
+	<item name="android:alertDialogTheme">@style/Demo.Dialog</item>
+
+	<item name="windowActionBar">false</item>
+	<item name="android:windowNoTitle">true</item>
+	<item name="windowActionModeOverlay">false</item>
+
+	<item name="alertDialogTheme">@style/Demo.Dialog</item>
+
+	<item name="colorPrimary">#000000</item>
+	<item name="colorPrimaryDark">#000000</item>
+	<item name="colorAccent">#000000</item>
+  </style>
+
+  <style name="Demo.Dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+	<item name="android:colorAccent">@color/black_color</item>
+	<item name="colorAccent">@color/black_color</item>
+  </style>
+
+</resources>

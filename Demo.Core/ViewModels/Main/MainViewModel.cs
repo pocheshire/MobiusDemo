@@ -22,7 +22,7 @@ namespace Demo.Core.ViewModels.Main
         /// Список доступных маяков, загруженный с сервера
         /// </summary>
         /// <value>Список <see cref="Demo.API.Models.Beacons.BeaconRegionModel"/></value>
-        internal List<BeaconRegionModel> Beacons { get; private set; }
+        internal List<BeaconModel> Beacons { get; private set; }
 
         /// <summary>
         /// Запускает загрузку доступных маячков и начинает поиск ближайших

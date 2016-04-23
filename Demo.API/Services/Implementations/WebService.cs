@@ -12,11 +12,11 @@ namespace Demo.API.Services.Implementations
     public class WebService : IWebService
     {
         #region IWebService implementation
-        public async Task<List<BeaconRegionModel>> LoadBeacons()
+        public async Task<List<BeaconModel>> LoadBeacons()
         {
             var url = string.Format("{0}beacon", AppData.Host);
 
-            return await ConnectionService.Get<List<BeaconRegionModel>>(url, "Не удалось загрузить список маячков");
+            return await ConnectionService.Get<List<BeaconModel>>(url, "Не удалось загрузить список маячков");
         }
 
         public async Task<Order> SendOrderWithStatus(Order order)

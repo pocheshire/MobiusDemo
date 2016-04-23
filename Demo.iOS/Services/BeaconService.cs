@@ -33,7 +33,7 @@ namespace Demo.iOS.Services
 
         #region IBeaconService implementation
 
-        public void Start (List<BeaconRegionModel> beacons)
+        public void Start (List<BeaconModel> beacons)
         {
             _locationMgr.RequestAlwaysAuthorization ();
 
@@ -117,25 +117,6 @@ namespace Demo.iOS.Services
             Mvx.Resolve<IMvxMessenger>().Publish<BeaconFoundMessage> (
                 new BeaconFoundMessage (this, uuid, major, minor)
             );
-
-//            LocalNotification();
-		}
-
-		private void LocalNotification ()
-		{
-			var notification = new UILocalNotification ();
-
-			// configure the alert stuff
-			notification.AlertAction = "Персональное предложение";
-			notification.AlertBody = "Специально для вас товар со скидкой";
-
-			// modify the badge
-			//notification.ApplicationIconBadgeNumber = 1;
-
-			// set the sound to be the default sound
-			notification.SoundName = UILocalNotification.DefaultSoundName;
-
-            UIApplication.SharedApplication.PresentLocalNotificationNow (notification);
 		}
 
         #endregion

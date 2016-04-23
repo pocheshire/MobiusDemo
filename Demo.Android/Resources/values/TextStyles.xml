@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+
+	<style name="center_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="center_text.black">
+        <item name="android:textColor">@color/black_color</item>
+    </style>
+
+    <style name="center_text.black.42px">
+        <item name="android:textSize">@dimen/text_size.42px</item>
+    </style>
+
+    <style name="center_text.black.48px">
+        <item name="android:textSize">@dimen/text_size.48px</item>
+    </style>
+
+    <style name="center_text.black.56px">
+        <item name="android:textSize">@dimen/text_size.56px</item>
+    </style>
+
+    <style name="center_text.black.70px">
+        <item name="android:textSize">@dimen/text_size.70px</item>
+    </style>
+
+</resources>

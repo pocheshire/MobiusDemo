@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+
+	<style name="edit_text" parent="@android:style/Widget.Holo.EditText">
+        <item name="android:textColor">@color/black_color</item>
+        <item name="android:textColorHint">@color/black_color</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_size.48px</item>
+    </style>
+
+</resources>

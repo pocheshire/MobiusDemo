@@ -8,7 +8,7 @@ using Demo.Core.Services;
 
 namespace Demo.iOS.Services
 {
-    public class ExtendedUserInteraction : IUserInteraction
+    public class UserInteraction : IUserInteraction
     {
         public void Alert(string message, Action done = null, string title = "", string okButton = "OK")
         {

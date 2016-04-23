@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/Include_Toolbar" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@color/tiny_white">
+            <TextView
+                style="@style/center_text.black.42px"
+                android:textStyle="normal"
+                android:text="@string/product_text" />
+        </LinearLayout>
+        <TextView
+            style="@style/center_text.black.56px"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:textStyle="bold"
+            local:MvxBind="Text ShopName" />
+        <TextView
+            style="@style/center_text.black.48px"
+            android:textStyle="bold"
+            local:MvxBind="Text ProductName" />
+        <TextView
+            style="@style/center_text.black.48px"
+            android:textStyle="bold"
+            local:MvxBind="Text Price" />
+        <Button
+            style="@style/color_button"
+            android:text="@string/product_button_text"
+            android:background="@android:color/holo_red_light"
+            local:MvxBind="Click BasketCommand" />
+    </LinearLayout>
+    <include
+        layout="@layout/Include_Loading" />
+</RelativeLayout>

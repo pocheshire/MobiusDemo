@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="button_height">52dp</dimen>
+
+    <dimen name="text_size.24px">8sp</dimen>
+    <dimen name="text_size.28px">9sp</dimen>
+    <dimen name="text_size.32px">10sp</dimen>
+    <dimen name="text_size.34px">11sp</dimen>
+    <dimen name="text_size.36px">11sp</dimen>
+    <dimen name="text_size.38px">12sp</dimen>
+    <dimen name="text_size.42px">13sp</dimen>
+    <dimen name="text_size.44px">14sp</dimen>
+    <dimen name="text_size.45px">15sp</dimen>
+    <dimen name="text_size.48px">16sp</dimen>
+    <dimen name="text_size.50px">17sp</dimen>
+    <dimen name="text_size.52px">17sp</dimen>
+    <dimen name="text_size.56px">18sp</dimen>
+    <dimen name="text_size.60px">19sp</dimen>
+    <dimen name="text_size.64px">20sp</dimen>
+    <dimen name="text_size.70px">22sp</dimen>
+    <dimen name="text_size.72px">23sp</dimen>
+    <dimen name="text_size.94px">32sp</dimen>
+    <dimen name="text_size.112px">36sp</dimen>
+
+    <dimen name="icon.small.size">20dp</dimen>
+</resources>

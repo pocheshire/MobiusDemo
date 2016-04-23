@@ -60,6 +60,7 @@ namespace Demo.Core.ViewModels.Pay
             try
             {
                 var instance = new YaMoneyInstance{ InstanceID = "Raqlr8fgDFqlICSixvkEk1g4wgjUhaQCDXqSHAcM6ImWEWwzjpsGC4sp9dpR37Xq" };
+//                var instance = await Mvx.Resolve<IYaMoneyService>().LoadMoneyInstance ();
 
                 var request = await Mvx.Resolve<IYaMoneyService>().LoadMoneyRequest (instance.InstanceID, ProductCard.YaMoney, ProductCard.Price);
 

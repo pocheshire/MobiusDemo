@@ -11,7 +11,7 @@ namespace Demo.Core.Services
         /// NOTE: платформозависимый метод (отдельная реализация для каждой платформы)
         /// </summary>
         /// <param name="beacons">Список маячков.</param>
-        void Start (List<BeaconRegionModel> beacons);
+        void Start (List<BeaconModel> beacons);
 
         /// <summary>
         /// Останавливает поиск маячков

@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Click Me!</string>
-    <string name="app_name">Demo</string>
+    <string name="app_name">MobiusDemo</string>
+
+    <string name="product_text">Поиск завершен!\nНайдено предложение!</string>
+    <string name="product_button_text">КУПИТЬ ТОВАР</string>
+
+    <string name="basket_text">Вы покупаете:</string>
+    <string name="basket_name_hint">Ваше имя</string>
+    <string name="basket_phone_hint">Ваш номер телефона</string>
+    <string name="basket_button_text">ОПЛАТИТЬ</string>
+
+    <string name="thanks_text">Оплата совершена.\nСпасибо за покупку!</string> 
+
 </resources>

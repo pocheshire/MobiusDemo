@@ -44,7 +44,7 @@ namespace Demo.iOS
         {
             base.InitializeLastChance();
 
-            Mvx.RegisterSingleton<IUserInteraction> (new ExtendedUserInteraction ());
+            Mvx.RegisterSingleton<IUserInteraction> (new UserInteraction ());
             Mvx.RegisterSingleton<IBeaconService> (new BeaconService ());
         }
     }

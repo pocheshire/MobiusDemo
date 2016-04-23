@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Demo.API.Models.Beacons
 {
-	public sealed class BeaconRegionModel
+	public sealed class BeaconModel
 	{
 		#region Properties
 

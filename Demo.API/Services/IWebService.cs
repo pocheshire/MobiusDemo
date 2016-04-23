@@ -8,7 +8,7 @@ namespace Demo.API.Services
 {
     public interface IWebService
     {
-        Task<List<BeaconRegionModel>> LoadBeacons();
+        Task<List<BeaconModel>> LoadBeacons();
 
         Task<Order> SendOrderWithStatus(Order order);
         Task<Order> SendOrderTransport(OrderTransport orderTransport);
