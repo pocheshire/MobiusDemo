@@ -7,7 +7,6 @@ using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.Platform;
 using Demo.iOS.Services;
 using Demo.Core.Services;
-using Demo.iOS.Navigation;
 using Demo.iOS.BindingControllers;
 
 namespace Demo.iOS
@@ -34,11 +33,6 @@ namespace Demo.iOS
             return new DemoDebugTrace();
         }
 
-        protected override IMvxIosViewPresenter CreatePresenter ()
-        {
-            return new CustomNavigationPresenter((MvxApplicationDelegate)ApplicationDelegate, Window);
-        }
-
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
             registry.RegisterCustomBindingFactory<UITextField>("PhoneBinding", view => new PhoneTextBindingController(view));
@@ -50,7 +44,7 @@ namespace Demo.iOS
         {
             base.InitializeLastChance();
 
-            Mvx.RegisterSingleton<IExtendedUserInteraction> (new ExtendedUserInteraction ());
+            Mvx.RegisterSingleton<IUserInteraction> (new ExtendedUserInteraction ());
             Mvx.RegisterSingleton<IBeaconService> (new BeaconService ());
         }
     }

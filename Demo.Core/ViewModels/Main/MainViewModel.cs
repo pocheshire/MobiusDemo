@@ -13,66 +13,71 @@ namespace Demo.Core.ViewModels.Main
 {
     public class MainViewModel : CommonViewModel
     {
-        private static MvvmCross.Plugins.Messenger.MvxSubscriptionToken _beaconToken;
+        /// <summary>
+        /// Токен, который нужен для корректной работы подписки на <see cref="Demo.Core.Messages.BeaconFoundMessage"/>
+        /// </summary>
+        private MvvmCross.Plugins.Messenger.MvxSubscriptionToken _beaconToken;
 
-        private IBeaconService _beaconService;
-
+        /// <summary>
+        /// Список доступных маяков, загруженный с сервера
+        /// </summary>
+        /// <value>Список <see cref="Demo.API.Models.Beacons.BeaconRegionModel"/></value>
         internal List<BeaconRegionModel> Beacons { get; private set; }
 
-        private bool _loading;
-        public bool Loading
+        /// <summary>
+        /// Запускает загрузку доступных маячков и начинает поиск ближайших
+        /// </summary>
+        private async void StartLoadAndSearchBeacons()
         {
-            get
-            {
-                return _loading;
-            }
-            set
-            {
-                _loading = value;
-                RaisePropertyChanged(() => Loading);
-            }
-        }
-
-        public MainViewModel()
-        {
-            Hint.NavigationType = NavigationType.ClearAndPush;
-
-            _beaconService = Mvx.Resolve<IBeaconService>();
-
-            _beaconToken = Messenger.Subscribe<BeaconChangeProximityMessage>(OnBeaconIsNear);
-        }
-
-        private async void Setup()
-        {
+            //Отображаем индикатор загрузки
             Loading = true;
 
             try
             {
+                //Получаем экземпляр сервиса IWebService и загружаем доступные маячки
                 Beacons = await Mvx.Resolve<IWebService>().LoadBeacons();
                 if (Beacons.IsNullOrEmpty())
                     return;
-                
-                _beaconService.Start(Beacons);
+
+                //Подписываемся на сообщение о том, что рядом был обнаружен маячок
+                _beaconToken = Messenger.Subscribe<BeaconFoundMessage>(OnBeaconIsNear);
+
+                //Начинаем поиск маячков рядом с пользователем
+                Mvx.Resolve<IBeaconService>().Start(Beacons);
             }
             catch (Exception ex)
             {
+                //Что-то пошло не так – отображаем пользователю соответствующий диалог
                 UserInteractions.Alert(ex.Message ?? "Не удалось найти ни одного маячка рядом, попробуйте в другом месте", title: "Ошибка");
+
+                //Скрываем индикатор загрузки
                 Loading = false;
             }
         }
 
-        private void OnBeaconIsNear(BeaconChangeProximityMessage msg)
+        /// <summary>
+        /// Вызывается, когда рядом находится маячок
+        /// </summary>
+        /// <param name="msg">Сообщение <see cref="Demo.Core.Messages.BeaconFoundMessage"/>.</param>
+        private void OnBeaconIsNear(BeaconFoundMessage msg)
         {
+            //Скрываем индикатор загрузки, ведь поиск уже закончен
             Loading = false;
 
+            //Проверяем, что найденный маячок "наш", т.е. находится в списке загруженных с сервера
             var beacon = Beacons.FirstOrDefault(x => x.UUID.ToLower() == msg.UUID.ToLower() && x.Major == msg.Major && x.Minor == msg.Minor);
             if (beacon != null)
             {
-                _beaconService.Stop();
-                Messenger.Unsubscribe<BeaconChangeProximityMessage>(_beaconToken);
+                //Останавливаем поиск маячков
+                Mvx.Resolve<IBeaconService>().Stop();
 
+                //Отписываемся от подписки на сообщения BeaconFoundMessage
+                Messenger.Unsubscribe<BeaconFoundMessage>(_beaconToken);
+
+                //Пишем в output какой маячок мы нашли
                 Mvx.Resolve<IMvxTrace>().Trace (MvxTraceLevel.Diagnostic, "Beacon", string.Format("Current Beacon {0} - {1} - {2}", beacon.UUID, beacon.Major, beacon.Minor));
 
+                //Показываем пользователю диалог о том, что мы нашли для него интересное предложение
                 UserInteractions.Alert(
                     "Персональное предложение! Специально для Вас товар со скидкой!", 
                     () => ShowViewModel<ProductViewModel>(new { id = beacon.ID }),
@@ -80,11 +85,15 @@ namespace Demo.Core.ViewModels.Main
             }
         }
 
+        /// <summary>
+        /// Метод, который говорит нам о том, что наша ViewModel отобразилась на экране
+        /// </summary>
         public override void Start()
         {
             base.Start();
 
-            Setup();
+            //Загружаем доступные маячки и запускаем поиск маяков рядом с пользователем
+            StartLoadAndSearchBeacons();
         }
     }
 }

@@ -52,14 +52,6 @@ namespace Demo.Core.ViewModels.Pay
 
         #endregion
 
-        #region Constructor
-
-        public PayViewModel()
-        {
-        }
-
-        #endregion
-
         #region Methods
 
         private async void LoadContent()

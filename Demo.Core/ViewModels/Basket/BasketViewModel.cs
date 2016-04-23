@@ -150,14 +150,6 @@ namespace Demo.Core.ViewModels.Basket
 
         #endregion
 
-        #region Constructor
-
-        public BasketViewModel()
-        {
-        }
-
-        #endregion
-
         #region Methods
 
         public void Init (string product)

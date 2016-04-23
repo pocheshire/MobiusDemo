@@ -114,8 +114,8 @@ namespace Demo.iOS.Services
             var major = (ushort)beacon.Major;
             var minor = (ushort)beacon.Minor;
 
-            Mvx.Resolve<IMvxMessenger>().Publish<BeaconChangeProximityMessage> (
-                new BeaconChangeProximityMessage (this, uuid, major, minor)
+            Mvx.Resolve<IMvxMessenger>().Publish<BeaconFoundMessage> (
+                new BeaconFoundMessage (this, uuid, major, minor)
             );
 
 //            LocalNotification();

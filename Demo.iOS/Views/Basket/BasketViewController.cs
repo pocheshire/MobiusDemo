@@ -25,7 +25,7 @@ namespace Demo.iOS.Views.Basket
             RegisterKeyboardActions = true;
         }
 
-        protected override void BindControlls()
+        protected override void BindControls()
         {
             var set = this.CreateBindingSet<BasketViewController, BasketViewModel>();
             set.Bind(_shopName).To(vm => vm.ShopName);
@@ -37,7 +37,7 @@ namespace Demo.iOS.Views.Basket
             set.Apply();
         }
 
-        protected override void InitializeControlls()
+        protected override void InitializeControls()
         {
             Title = "Оформление";
 

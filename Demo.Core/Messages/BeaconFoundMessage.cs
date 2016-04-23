@@ -4,7 +4,10 @@ using Demo.API.Models.Beacons;
 
 namespace Demo.Core.Messages
 {
-    public class BeaconChangeProximityMessage : MvxMessage
+    /// <summary>
+    /// Сообщение о том, что рядом был найден маячок
+    /// </summary>
+    public class BeaconFoundMessage : MvxMessage
     {
         public string UUID { get; private set; }
 
@@ -12,7 +15,7 @@ namespace Demo.Core.Messages
 
         public ushort Minor { get; private set; }
 
-        public BeaconChangeProximityMessage(object sender, string uuid, ushort major, ushort minor)
+        public BeaconFoundMessage(object sender, string uuid, ushort major, ushort minor)
             : base (sender)
         {
             UUID = uuid;

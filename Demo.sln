@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.iOS", "Demo.iOS\Demo.iOS.csproj", "{9FF67C9F-3F58-4266-B4DD-BCE64494199C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Core", "Demo.Core\Demo.Core.csproj", "{D1C8218E-9A09-4334-BC3D-8D72C0ABA7B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.API", "Demo.API\Demo.API.csproj", "{223AEAF9-6B47-4F48-B562-3CC594AF820C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{237992A3-8510-4503-8405-BF06F8DBF2A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Android", "Demo.Android\Demo.Android.csproj", "{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.iOS", "Demo.iOS\Demo.iOS.csproj", "{9FF67C9F-3F58-4266-B4DD-BCE64494199C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		Debug|iPhone = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D}.Release|iPhone.Build.0 = Release|Any CPU
+		{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{223AEAF9-6B47-4F48-B562-3CC594AF820C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{223AEAF9-6B47-4F48-B562-3CC594AF820C}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{223AEAF9-6B47-4F48-B562-3CC594AF820C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
@@ -39,5 +51,9 @@ Global
 		{D1C8218E-9A09-4334-BC3D-8D72C0ABA7B8}.Release|iPhone.Build.0 = Release|Any CPU
 		{D1C8218E-9A09-4334-BC3D-8D72C0ABA7B8}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{D1C8218E-9A09-4334-BC3D-8D72C0ABA7B8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06ED8186-EBCA-4A4F-8882-8870E0BEEA7D} = {237992A3-8510-4503-8405-BF06F8DBF2A0}
+		{9FF67C9F-3F58-4266-B4DD-BCE64494199C} = {237992A3-8510-4503-8405-BF06F8DBF2A0}
 	EndGlobalSection
 EndGlobal

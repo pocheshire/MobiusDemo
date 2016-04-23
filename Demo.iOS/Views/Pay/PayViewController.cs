@@ -16,7 +16,7 @@ namespace Demo.iOS.Views.Pay
         {
         }
 
-        protected override void BindControlls()
+        protected override void BindControls()
         {
             var set = this.CreateBindingSet<PayViewController, PayViewModel>();
             set.Bind(_webView).For("Text").To(vm => vm.HtmlText);
@@ -26,7 +26,7 @@ namespace Demo.iOS.Views.Pay
             _webView.Failed += ViewModel.PaymentFailed;
         }
 
-        protected override void InitializeControlls()
+        protected override void InitializeControls()
         {
             Title = "Оплата";
 
@@ -35,12 +35,6 @@ namespace Demo.iOS.Views.Pay
             };
 
             View.AddSubview (_webView);
-        }
-
-        protected override void CleanUp()
-        {
-            _webView.Successed -= ViewModel.PaymentSucceeded;
-            _webView.Failed -= ViewModel.PaymentFailed;
         }
     }
 }

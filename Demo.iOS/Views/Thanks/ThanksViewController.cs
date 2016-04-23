@@ -18,7 +18,7 @@ namespace Demo.iOS.Views.Thanks
         {
         }
 
-        protected override void BindControlls()
+        protected override void BindControls()
         {
             var set = this.CreateBindingSet<ThanksViewController, ThanksViewModel>();
             set.Bind(_shopName).To(vm => vm.ShopName);
@@ -28,7 +28,7 @@ namespace Demo.iOS.Views.Thanks
             set.Apply();
         }
 
-        protected override void InitializeControlls()
+        protected override void InitializeControls()
         {
             Title = "Спасибо!";
 

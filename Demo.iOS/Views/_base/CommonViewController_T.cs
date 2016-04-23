@@ -46,10 +46,10 @@ namespace Demo.iOS.Views
             this.CreateBinding(_loading).For("Visibility").To("Loading").WithConversion("Visibility").Apply();
 
             if (ViewModel != null)
-                BindControlls();
+                BindControls();
         }
 
-        protected abstract void BindControlls();
+        protected abstract void BindControls();
 
         public override void LoadView()
         {
@@ -65,7 +65,7 @@ namespace Demo.iOS.Views
             _loading.Frame = new CGRect((UIScreen.MainScreen.Bounds.Width - _loading.Frame.Width) / 2, (UIScreen.MainScreen.Bounds.Height - _loading.Frame.Height) / 2, _loading.Frame.Width, _loading.Frame.Height);
             _loading.StartAnimating();
 
-            InitializeControlls();
+            InitializeControls();
 
             View.AddSubview(_loading);
 
@@ -76,10 +76,12 @@ namespace Demo.iOS.Views
             }
         }
 
-        protected virtual void InitializeControlls ()
+        protected virtual void InitializeControls ()
         {
             
         }
+
+        #region Keyboard
 
         private void RegisterHideKeyboardOnSwipe()
         {
@@ -151,25 +153,6 @@ namespace Demo.iOS.Views
             _keyboardObserverWillHide = null;
         }
 
-        #region IUnbindable implementation
-
-        protected virtual void CleanUp()
-        {
-
-        }
-
-        public void Unbind()
-        {
-            UnregisterKeyboardNotifications();
-
-            CleanUp();
-
-            var viewModel = ViewModel as ICommonViewModel;
-            if (viewModel != null)
-                viewModel.Unbind();
-        }
-
         #endregion
 	}
-
 }

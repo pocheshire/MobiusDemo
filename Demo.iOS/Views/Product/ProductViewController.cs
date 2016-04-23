@@ -19,7 +19,7 @@ namespace Demo.iOS.Views.Product
         {
         }
 
-        protected override void BindControlls()
+        protected override void BindControls()
         {
             var set = this.CreateBindingSet<ProductViewController, ProductViewModel>();
             set.Bind(_shopName).To(vm => vm.ShopName);
@@ -29,7 +29,7 @@ namespace Demo.iOS.Views.Product
             set.Apply();
         }
 
-        protected override void InitializeControlls()
+        protected override void InitializeControls()
         {
             Title = "Предложение";
 

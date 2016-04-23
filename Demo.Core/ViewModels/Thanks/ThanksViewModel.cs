@@ -69,15 +69,6 @@ namespace Demo.Core.ViewModels.Thanks
 
         #endregion
 
-        #region Constructor
-
-        public ThanksViewModel()
-        {
-            Hint.NavigationType = NavigationType.PresentModal;
-        }
-
-        #endregion
-
         #region Methods
 
         public void Init (string product, string order)

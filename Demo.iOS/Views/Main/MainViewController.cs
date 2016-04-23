@@ -9,13 +9,17 @@ namespace Demo.iOS.Views.Main
 {
     public partial class MainViewController : CommonViewController<MainViewModel>
     {
-        public MainViewController()
+        protected override void BindControls()
         {
+            
         }
 
-        protected override void BindControlls()
+        protected override void InitializeControls()
         {
+            base.InitializeControls();
+
             Title = "Поиск";
+
             View.BackgroundColor = UIColor.FromPatternImage (UIImage.FromFile ("Images/main.jpg"));
         }
     }

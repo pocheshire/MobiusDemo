@@ -34,18 +34,15 @@
     <Compile Include="App.cs" />
     <Compile Include="ViewModels\Main\MainViewModel.cs" />
     <Compile Include="Services\IBeaconService.cs" />
-    <Compile Include="Messages\BeaconChangeProximityMessage.cs" />
     <Compile Include="ViewModels\Product\ProductViewModel.cs" />
     <Compile Include="ViewModels\Basket\BasketViewModel.cs" />
     <Compile Include="ViewModels\Pay\PayViewModel.cs" />
     <Compile Include="ViewModels\Thanks\ThanksViewModel.cs" />
-    <Compile Include="Services\IExtendedUserInteraction.cs" />
-    <Compile Include="ViewModels\_base\NavigationHint.cs" />
-    <Compile Include="ViewModels\_base\NavigationType.cs" />
     <Compile Include="ViewModels\_base\CommonViewModel.cs" />
     <Compile Include="Extentions\SystemExtensions.cs" />
-    <Compile Include="ViewModels\_base\ICommonViewModel.cs" />
     <Compile Include="Extentions\StringExtentions.cs" />
+    <Compile Include="Services\IUserInteraction.cs" />
+    <Compile Include="Messages\BeaconFoundMessage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

@@ -6,7 +6,16 @@ namespace Demo.Core.Services
 {
     public interface IBeaconService
     {
+        /// <summary>
+        /// Запускает поиск маячков
+        /// NOTE: платформозависимый метод (отдельная реализация для каждой платформы)
+        /// </summary>
+        /// <param name="beacons">Список маячков.</param>
         void Start (List<BeaconRegionModel> beacons);
+
+        /// <summary>
+        /// Останавливает поиск маячков
+        /// </summary>
         void Stop ();
     }
 }

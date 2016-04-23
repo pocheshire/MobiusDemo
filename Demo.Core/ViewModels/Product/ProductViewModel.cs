@@ -107,8 +107,6 @@ namespace Demo.Core.ViewModels.Product
 
         public ProductViewModel()
         {
-            Hint.NavigationType = NavigationType.ClearAndPush;
-            
             Photos = new ObservableCollection<string>();
         }
 

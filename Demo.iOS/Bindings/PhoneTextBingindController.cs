@@ -60,6 +60,8 @@ namespace Demo.iOS.BindingControllers
             base.Dispose(isDisposing);
         }
 
+        #region Phone number formatting methods
+
         private bool ShouldChangePhoneNumber(UITextField textField, NSRange range, string replacementString)
         {
             var changedString = (range.Location > 0 ? textField.Text.Substring (0, (int)range.Location) : "")
@@ -133,6 +135,8 @@ namespace Demo.iOS.BindingControllers
             }
             return outputString.ToString();     
         }
+
+        #endregion
     }
 }
 
