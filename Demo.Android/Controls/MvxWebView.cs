@@ -20,6 +20,15 @@ namespace Demo.Android.Controls
                     return;
 
                 _text = value;
+
+                var client = new WebViewClient();
+                client.ShouldOverrideUrlLoading(this, null);
+
+                SetWebViewClient(client);
+
+                this.Settings.JavaScriptCanOpenWindowsAutomatically = true;
+                this.Settings.JavaScriptEnabled = true;
+
                 LoadData(_text, "text/html; charset=UTF-8", null);
             }
         }
