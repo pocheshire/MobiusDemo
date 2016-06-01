@@ -15,10 +15,6 @@ namespace Demo.iOS.Views.Product
         private UILabel _price;
         private UIButton _basketButton;
 
-        public ProductViewController()
-        {
-        }
-
         protected override void BindControls()
         {
             var set = this.CreateBindingSet<ProductViewController, ProductViewModel>();

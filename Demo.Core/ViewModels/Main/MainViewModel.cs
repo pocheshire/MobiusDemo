@@ -61,13 +61,13 @@ namespace Demo.Core.ViewModels.Main
         /// <param name="msg">Сообщение <see cref="Demo.Core.Messages.BeaconFoundMessage"/>.</param>
         private void OnBeaconIsNear(BeaconFoundMessage msg)
         {
-            //Скрываем индикатор загрузки, ведь поиск уже закончен
-            Loading = false;
-
             //Проверяем, что найденный маячок "наш", т.е. находится в списке загруженных с сервера
             var beacon = Beacons.FirstOrDefault(x => x.UUID.ToLower() == msg.UUID.ToLower() && x.Major == msg.Major && x.Minor == msg.Minor);
             if (beacon != null)
             {
+                //Скрываем индикатор загрузки, ведь поиск уже закончен
+                Loading = false;
+
                 //Останавливаем поиск маячков
                 Mvx.Resolve<IBeaconService>().Stop();
 

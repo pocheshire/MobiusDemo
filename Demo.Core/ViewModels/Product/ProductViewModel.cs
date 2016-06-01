@@ -59,20 +59,6 @@ namespace Demo.Core.ViewModels.Product
             }
         }
 
-        private ObservableCollection<string> _photos;
-        public ObservableCollection<string> Photos
-        {
-            get
-            {
-                return _photos;
-            }
-            set
-            {
-                _photos = value;
-                RaisePropertyChanged(() => Photos);
-            }
-        }
-
         private string _price;
         public string Price
         {
@@ -103,15 +89,6 @@ namespace Demo.Core.ViewModels.Product
 
         #endregion
 
-        #region Constructor
-
-        public ProductViewModel()
-        {
-            Photos = new ObservableCollection<string>();
-        }
-
-        #endregion
-
         #region Methods
 
         private async Task LoadContent(int id)
@@ -125,9 +102,6 @@ namespace Demo.Core.ViewModels.Product
                 {
                     ShopName = Bundle.ShopName;
                     ProductName = Bundle.Name;
-
-                    if (Bundle.HasImages)
-                        Photos = new ObservableCollection<string> (Bundle.Images.Select(x => ProductCard.GetImageUrl (x, 1280, 720)));
 
                     Price = Bundle.Price.ToPriceString();
 
