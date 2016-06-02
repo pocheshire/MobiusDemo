@@ -156,7 +156,6 @@
     <Compile Include="Services\BeaconService.cs" />
     <Compile Include="Views\Basket\BasketViewController.cs" />
     <Compile Include="Views\Pay\PayViewController.cs" />
-    <Compile Include="Views\Product\ProductViewController.cs" />
     <Compile Include="Views\Thanks\ThanksViewController.cs" />
     <Compile Include="Bindings\PhoneTextBingindController.cs" />
     <Compile Include="DebugTrace.cs" />
@@ -165,6 +164,10 @@
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Services\UserInteraction.cs" />
+    <Compile Include="Views\Product\ProductViewController.cs" />
+    <Compile Include="Views\Product\ProductViewController.designer.cs">
+      <DependentUpon>ProductViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
@@ -195,5 +198,8 @@
     <BundleResource Include="Images\bill%402x.png" />
     <BundleResource Include="Images\close%402x.png" />
     <BundleResource Include="Images\main%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Views\Product\ProductViewController.xib" />
   </ItemGroup>
 </Project>
